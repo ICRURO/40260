@@ -1,0 +1,13 @@
+<!ELEMENT programa (instruccion*)>
+<!ELEMENT instruccion (asignar | imprimir | si | mientras)>
+<!ELEMENT asignar (variable, valor)>
+<!ELEMENT imprimir (mensaje)>
+<!ELEMENT si (condicion, entonces, sino?)>
+<!ELEMENT mientras (condicion, hacer)>
+<!ELEMENT variable (#PCDATA)>
+<!ELEMENT valor (#PCDATA)>
+<!ELEMENT mensaje (#PCDATA)>
+<!ELEMENT condicion (#PCDATA)>
+<!ELEMENT entonces (instruccion*)>
+<!ELEMENT sino (instruccion*)>
+<!ELEMENT hacer (instruccion*)>

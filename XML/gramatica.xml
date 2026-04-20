@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE programa SYSTEM "gramatica.dtd">
+
+<programa>
+    <!-- Ejemplo 1: Control de una lavadora -->
+    <instruccion>
+        <asignar>
+            <variable>lavando</variable>
+            <valor>true</valor>
+        </asignar>
+    </instruccion>
+    <instruccion>
+        <si>
+            <condicion>lavando == true</condicion>
+            <entonces>
+                <instruccion>
+                    <imprimir>
+                        <mensaje>Iniciando lavado</mensaje>
+                    </imprimir>
+                </instruccion>
+            </entonces>
+        </si>
+    </instruccion>
+    <instruccion>
+        <mientras>
+            <condicion>tiempo &lt; 30</condicion>
+            <hacer>
+                <instruccion>
+                    <imprimir>
+                        <mensaje>Lavando...</mensaje>
+                    </imprimir>
+                </instruccion>
+            </hacer>
+        </mientras>
+    </instruccion>
+    <instruccion>
+        <imprimir>
+            <mensaje>Lavado completado</mensaje>
+        </imprimir>
+    </instruccion>
+</programa>

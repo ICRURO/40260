@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE direccion SYSTEM "xml-00.dtd">
+<direccion>
+    <nombrecompleto>
+        <nombre>ian</nombre>
+        <apellidos>rumayor</apellidos>
+    </nombrecompleto>
+    <correo>iancarloromero@gmail.com</correo>
+    <telefono>2288996655</telefono>
+    <cumple>
+        <dia>19</dia>
+        <mes>06</mes>
+        <anio>2002</anio>
+    </cumple>
+</direccion>
