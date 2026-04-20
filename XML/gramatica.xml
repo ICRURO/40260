@@ -2,7 +2,7 @@
 <!DOCTYPE programa SYSTEM "gramatica.dtd">
 
 <programa>
-    <!-- Ejemplo 1: Control de una lavadora -->
+    
     <instruccion>
         <asignar>
             <variable>lavando</variable>
