@@ -1,48 +1,66 @@
 let resultado = document.getElementById("resultado");
 let botones = document.getElementsByTagName("button");
+let prm1 = 0;
+let operador = "";
+
 for (const key in botones) {
     if (Object.prototype.hasOwnProperty.call(botones, key)) {
         const boton = botones[key];
-        boton.addEventListener("click", pintar);
-        console.log(boton);
-    }
-}
-
-let operadores = document.getElementsByClassName("operadores");
-for (const key in operadores) {
-    if (Object.prototype.hasOwnProperty.call(operadores, key)) {
-        const boton = operadores[key];
-        console.log(boton.className);
-        if(boton.className != "operadores"){
+        if (boton.className !== "operadores") {
             boton.addEventListener("click", pintar);
         }
-        else{
+        else {
             boton.addEventListener("click", pintar2);
         }
-        //console.log(boton);
     }
 }
 
 function pintar(e) {
-    console.log(e.target.innerText);
     resultado.value += e.target.innerText;
 }
 
-function pintar2(e){
-    console.log(e.target.innerText);
-    if (e.target.innerText == "+"){
-        suma()
+function pintar2(e) {
+    let tecla = e.target.innerText;
+    
+    if (tecla === "Ce") {
+        resultado.value = "";
+        prm1 = 0;
+        operador = "";
+    }
+    else if (tecla === "=") {
+        igual();
+    }
+    else {
+        if (resultado.value !== "") {
+            prm1 = resultado.value;
+            operador = tecla;
+            resultado.value = "";
+        }
     }
 }
 
-function suma(){
-    prm1 = resultado.value
-    resultado.value = ""
+function igual() {
+    if (operador === "" || resultado.value === "") return;
     
-
-}
-
-function igual(){
-    prm2 = resultado.value
-    resultado.value = prm1 + prm2
+    let prm2 = resultado.value;
+    let res = 0;
+    
+    switch (operador) {
+        case "+":
+            res = parseInt(prm1) + parseInt(prm2);
+            break;
+        case "-":
+            res = parseInt(prm1) - parseInt(prm2);
+            break;
+        case "*":
+            res = parseInt(prm1) * parseInt(prm2);
+            break;
+        case "/":
+            res = parseInt(prm1) / parseInt(prm2);
+            break;
+    }
+    
+    resultado.value = res;
+    operador = "";
+    prm1 = 0;
 }
